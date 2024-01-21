@@ -1,0 +1,36 @@
+﻿@model PaginatedList<Student>
+
+<div class="search-container">
+    <input type="text" class="search-input" placeholder="Search..." />
+    <button class="search-btn">Search</button>
+    <a href="@Url.Action("Create", "Students")" class="search-btn">Create New Student</a>
+</div>
+
+<table class="students-table">
+    <thead>
+        <tr>
+            <th>Number</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => student.FirstName)</td>
+                <td>@Html.DisplayFor(modelItem => student.LastName)</td>
+                <td>@Html.DisplayFor(modelItem => student.Age)</td>
+                <td>
+                    <a href="@Url.Action("Edit", "Students", new { id = student.Id })" class="btn btn-primary">Edit</a>
+                    <a href="@Url.Action("Delete", "Students", new { id = student.Id })" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="pagination">
+</div>

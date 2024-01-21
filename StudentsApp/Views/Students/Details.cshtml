@@ -1,0 +1,17 @@
+﻿@model Student
+
+<div class="student-details-container">
+    <h1>Student Details</h1>
+    <dl class="details-list">
+        <dt>First Name</dt>
+        <dd>@Model.FirstName</dd>
+        <dt>Last Name</dt>
+        <dd>@Model.LastName</dd>
+        <dt>Age</dt>
+        <dd>@Model.Age</dd>
+    </dl>
+    <div class="action-buttons">
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="edit-btn">Edit</a>
+        <a asp-action="Delete" asp-route-id="@Model.Id" class="delete-btn">Delete</a>
+    </div>
+</div>

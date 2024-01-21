@@ -1,0 +1,26 @@
+﻿<div class="edit-delete-container">
+    <form class="edit-delete-form" action="/Students/Edit" method="post">
+        <!-- Assuming you have a model binding -->
+        <input type="hidden" name="Id" value="@Model.Id" />
+
+        <div class="form-group">
+            <label for="FirstName">First Name</label>
+            <input type="text" id="FirstName" name="FirstName" class="form-control" value="@Model.FirstName">
+        </div>
+
+        <div class="form-group">
+            <label for="LastName">Last Name</label>
+            <input type="text" id="LastName" name="LastName" class="form-control" value="@Model.LastName">
+        </div>
+
+        <div class="form-group">
+            <label for="Age">Age</label>
+            <input type="number" id="Age" name="Age" class="form-control" value="@Model.Age">
+        </div>
+
+        <div class="action-buttons">
+            <button type="submit" class="submit-btn">Save Changes</button>
+            <a href="@Url.Action("Index", "Students")" class="cancel-btn">Cancel</a>
+        </div>
+    </form>
+</div>
